@@ -4,7 +4,7 @@ let bass = new Tone.Synth({
   volume: -7
 });
 let bassFilter = new Tone.Filter({type: 'lowpass', frequency: 2000})
-bass.connect(bassFilter);
+bass.connect(bassFilter); //creating a path for the audio
 bassFilter.toDestination();
 
 
@@ -19,7 +19,7 @@ let drumPlayers = new Tone.Players({
   tomHigh: "https://teropa.info/ext-assets/drumkit/tomHigh.mp3",
   ride: "https://teropa.info/ext-assets/drumkit/ride.mp3",
   crash: "https://teropa.info/ext-assets/drumkit/hatOpen.mp3",
-}).toDestination()
+}).toDestination() //add to destination to ensure movement to speaker
 
 let leadSampler = new Tone.Sampler({
   urls:{
@@ -69,7 +69,7 @@ let bassPart = new Tone.Part((time,note) => {
 }, bassPattern).start();
 bassPart.loop = true;
 bassPart.loopStart = 0;
-bassPart.loopEnd = '6n';
+bassPart.loopEnd = '2n';
 
 let leadPattern = [
   
@@ -98,6 +98,7 @@ document.getElementById("bpm").oninput = (evt) => {
   Tone.Transport.bpm.value = newBpm
   
 }
+//creating the sequencer
 
 let sequencer = new Nexus.Sequencer('#sequencer', {
   columns: 32,
