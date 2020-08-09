@@ -28,7 +28,13 @@ let leadSampler = new Tone.Sampler({
   'C2': 'https://cdn.glitch.com/ebf44f9f-a243-48ec-8f40-245e737c8458%2Fceltic.wav?v=1596989537626'
   },
   volume: -4
-  }).toDestination()
+  })
+let leadDelay = new Tone.PingPongDelay('8n.', 0.3)
+leadSampler.connect(leadDelay);
+leadDelay.toDestination();
+let leadReverb = new Tone.Reverb({ decay: 3, wet: 0.5}).toDestination();
+leadSampler.connect(leadReverb);
+
 
 //Patterns
 
