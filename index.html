@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hello!</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.7.39/build/Tone.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/nexusui@2.0.13/dist/NexusUI.js"></script>
+    <script src="/script.js" defer></script>
+    
+  </head>  
+  <body>
+    <label>
+    BPM <input id ="bpm" type="range" min ="30" max="300" value="120">
+    </label>
+    <button id="start">
+      Start
+    </button>
+    <button id ="stop">
+      Stop
+    </button>
+    <div id="sequencer">
+    </div>
+    
+    
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js" defer></script>
+  </body>
+</html>
